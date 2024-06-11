@@ -1,5 +1,6 @@
 from tkinter import *
-
+def close_window():
+    window.destroy()
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
@@ -33,11 +34,15 @@ add_button.grid(row=4, column=1, columnspan=2, pady=5)
 # Entries
 website_entry = Entry(width=52)
 website_entry.grid(row=1, column=1, columnspan=2)
+website_entry.focus()
 
 username_entry = Entry(width=52)
 username_entry.grid(row=2, column=1, columnspan=2)
+username_entry.insert(0, "jacksonsam786@gmail.com" )
 
 password_entry = Entry(width=33)
 password_entry.grid(row=3, column=1)
+
+window.after(10000, close_window)
 
 window.mainloop()
