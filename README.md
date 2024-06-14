@@ -1,4 +1,4 @@
-# GUI password generator and manager using pyhton and tkinter
+# GUI based password generator and manager using pyhton and tkinter
 # This project is created using python 3.12 and pycharm IDE
 
 **Steps to run the project**
