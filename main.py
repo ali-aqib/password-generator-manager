@@ -67,16 +67,17 @@ def find_password():
         try:
             with open("data.json") as file:
                 data = json.load(file)
-            email = data[website]["email"]
-            password = data[website]["password"]
-        except (FileNotFoundError, json.JSONDecodeError):
+        except FileNotFoundError:
             messagebox.showinfo(title="OPPS", message="You have not saved any passwords yet")
-        except KeyError:
-            messagebox.showinfo(title="OOPS", message="Credentials Not Found")
         else:
-            messagebox.showinfo(title=f"Details Found for {website}", message=f"Email: {email}\n Password: {password}\n"
-                                                                              f"Password copied to clipboard.")
-            pyperclip.copy(password)
+            if website in data:
+                email = data[website]["email"]
+                password = data[website]["password"]
+                messagebox.showinfo(title=f"Details Found for {website}",
+                                    message=f"Email: {email}\nPassword: {password}\nPassword copied to clipboard.")
+                pyperclip.copy(password)
+            else:
+                messagebox.showinfo(title="OOPS", message=f"No details for{website} found.")
 
 # ---------------------------- UI SETUP ------------------------------- #
 
