@@ -3,8 +3,9 @@
 
 **Steps to run the project**
 1. Install python 3.12
-2. Install module pyperclip
-3. Run the project in the IDE
+2. Open project in the python IDE
+3. Install module pyperclip
+   
 
 # Usage Guide
 ![Screenshot](./Screenshot.png)
